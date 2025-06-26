@@ -51,4 +51,9 @@ public class ObraController {
     public ResponseEntity<List<Obra>> findByArtistaId(@PathVariable Integer artistaId) {
         return ResponseEntity.ok(obraService.buscarObraPorArtistaId(artistaId));
     }
+
+    @GetMapping("/buscar-por-artista")
+    public ResponseEntity<List<Obra>> findByNomeArtista(@RequestParam String nome) {
+        return ResponseEntity.ok(obraService.buscarObraPorNomeArtista(nome));
+    }
 }

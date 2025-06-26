@@ -52,5 +52,14 @@ public class ObraService {
         artistaService.buscarArtistaPorId(artistaId);
         return obraRepository.findByArtistaId(artistaId);
     }
+
+    public List<Obra> buscarObraPorNomeArtista(String nome) {
+    List<Artista> artistas = artistaService.buscarArtistaPorNome(nome);
+    if (artistas.isEmpty()) {
+        throw new EntityNotFoundException("Nenhum artista encontrado com o nome: " + nome);
+    }
+    // Supondo que uma obra pode ter apenas um artista, mas pode haver vários artistas com nomes parecidos
+    return obraRepository.findByArtistaIn(artistas);
+}
 }
 
