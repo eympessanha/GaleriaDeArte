@@ -42,10 +42,13 @@ Docker e Docker Compose (para a opção com contêiner)
 Um cliente de API (Postman, Insomnia, etc.) para testar os endpoints.
 
 1. Clonando o Repositório
+
 git clone https:github.com/eympessanha/GaleriaDeArte.git
+
 cd GaleriaDeArte
 
 2. Configuração do Banco de Dados
+
 Crie um banco de dados MySQL chamado galeria_db.
 
 No arquivo src/main/resources/application.properties, atualize as seguintes propriedades com suas credenciais do MySQL:
@@ -62,6 +65,7 @@ mvn spring-boot:run
 A API estará disponível em http://localhost:8080.
 
 4. Executando com Docker
+
 O projeto pode ser iniciado facilmente com Docker Compose, que subirá tanto a aplicação quanto o banco de dados MySQL em contêineres separados.
 
 Na raiz do projeto, execute:
